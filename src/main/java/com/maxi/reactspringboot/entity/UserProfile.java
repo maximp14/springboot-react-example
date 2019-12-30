@@ -1,6 +1,7 @@
 package com.maxi.reactspringboot.entity;
 
 import java.util.Objects;
+import java.util.Optional;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,8 +39,8 @@ public class UserProfile {
     return username;
   }
 
-  public String getUserProfileImage() {
-    return userProfileImage;
+  public Optional<String> getUserProfileImage() {
+    return Optional.ofNullable(userProfileImage);
   }
 
   public void setUserProfileId(Integer userProfileId) {

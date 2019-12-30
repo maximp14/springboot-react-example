@@ -60,10 +60,9 @@ public class UserProfileImageService {
     String path = String
         .format("%s/%s", PROFILE_IMAGE.getBucketName(), user.getUserProfileId());
 
-//    return user.getUserProfileImage()
-//        .map(key -> fileStore.download(path, key))
-//        .orElse(new byte[0]);
-
+    return user.getUserProfileImage()
+            .map(key -> fileStore.download(path, key))
+            .orElse(new byte[0]);
   }
 
 
